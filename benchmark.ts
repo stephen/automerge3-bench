@@ -1,7 +1,11 @@
 import * as Automerge2 from 'automerge2'
 import * as Automerge3 from 'automerge3'
 import * as fs from 'node:fs'
-import { performance } from 'node:perf_hooks'
+
+// Use performance API that works in both Node and Bun
+const now = typeof performance !== 'undefined'
+  ? () => performance.now()
+  : () => Date.now()
 
 // Read the documents
 const smallDoc = fs.readFileSync('data/42pW7cz4u4Yi81uU4hBp74-1738620695537-demo-docv3.tnd')
@@ -12,9 +16,9 @@ function runBenchmark(name: string, fn: () => void, iterations: number = 10) {
   const times: number[] = []
 
   for (let i = 0; i < iterations; i++) {
-    const start = performance.now()
+    const start = now()
     fn()
-    const end = performance.now()
+    const end = now()
     times.push(end - start)
   }
 

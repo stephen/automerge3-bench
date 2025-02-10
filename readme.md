@@ -5,7 +5,15 @@ npm install
 npm start
 ```
 
+or
+
+```bash
+bun benchmark.ts
+```
+
 ## Results
+I saw roughly the same order of magnitude between bun and node, testing on bun v1.2.2 and node v23.3.0.
+
 ```
 === Document Sizes ===
 Small doc: 172.90 KB
