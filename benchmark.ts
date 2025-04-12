@@ -11,8 +11,8 @@ const now = typeof performance !== 'undefined'
   ? () => performance.now()
   : () => Date.now()
 
-const smallDoc = fs.readFileSync('data/42pW7cz4u4Yi81uU4hBp74-1738620695537-demo-docv3.tnd')
-const largeDoc = fs.readFileSync('data/5wxCCUYVTVv6GfjUKaNwSh-1739211904060-dev-docv4.tnd')
+const smallDoc = fs.readFileSync('data/small.tnd')
+const largeDoc = fs.readFileSync('data/large.tnd')
 
 function runBenchmark(name: string, fn: () => void, iterations: number = 20, previousResults?: { average: number, p50: number, p95: number, p99: number }) {
   const times: number[] = []
