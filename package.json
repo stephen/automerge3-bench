@@ -12,7 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@automerge/automerge": "^3.0.0-alpha.1",
+    "@automerge/automerge": "^3.0.0-alpha.2",
     "automerge2": "npm:@automerge/automerge@^2.2.8",
     "automerge3": "npm:@automerge/automerge@3.0.0-alpha.0"
   },
